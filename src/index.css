@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .menu-item {
+    @apply flex items-center gap-5;
+  }
+  .icon-animation {
+    @apply transition duration-500  cursor-pointer  ease-in-out hover:scale-105;
+  }
+  .over-view {
+    @apply w-[23%] bg-[#ffffff] border-2 border-t-4 rounded-md h-[10rem] hover:shadow-md transition-transform duration-300 hover:scale-105;
+  }
+  .h1-over-view {
+    @apply py-3 px-3 text-sm font-semibold text-gray-700;
+  }
+  .style_address {
+    @apply w-full border text-sm  px-3 py-2 rounded-lg shadow-sm 
+                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                 transition placeholder-gray-400;
+  }
+}
