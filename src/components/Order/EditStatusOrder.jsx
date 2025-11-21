@@ -35,7 +35,7 @@ function EditStatusOrder({
           <p>
             <span className="font-medium">Tổng tiền:</span>{" "}
             <span className="font-bold text-red-600">
-              {selectedOrderEdit?.totalPriceProduct?.toLocaleString("vi-VN")} ₫
+              {selectedOrderEdit?.finalPrice?.toLocaleString("vi-VN")} ₫
             </span>
           </p>
         </div>

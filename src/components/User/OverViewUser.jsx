@@ -9,7 +9,7 @@ function OverViewUser({ data }) {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6 ">
         {/* Tổng Danh Mục */}
         <div className="bg-white h-[9rem] border px-6 py-5 rounded-xl shadow-md flex flex-col justify-between">
           <h1 className="text-gray-600 text-sm font-semibold">

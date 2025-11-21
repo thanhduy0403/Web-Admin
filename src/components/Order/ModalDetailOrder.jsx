@@ -74,7 +74,7 @@ function ModalDetailOrder({ selectedOrder }) {
             <div className="flex justify-between items-center">
               <span className="font-semibold text-gray-700">Tổng tiền: </span>
               <span className="text-lg font-bold text-red-600">
-                {selectedOrder?.totalPriceProduct.toLocaleString("vi-VN")} ₫
+                {selectedOrder?.finalPrice.toLocaleString("vi-VN")} ₫
               </span>
             </div>
 

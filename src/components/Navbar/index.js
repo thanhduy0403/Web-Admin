@@ -1,41 +1,20 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { BsCartPlus } from "react-icons/bs";
-import { getCartCreateBy, logOut } from "../../redux/apiRequest";
+import { logOut } from "../../redux/apiRequest";
 import { TbLogout2 } from "react-icons/tb";
 import { TbLogin2 } from "react-icons/tb";
-import { Bell } from "lucide-react";
-import axiosInstance from "../../axiosInstance";
+import Notification from "./Notification";
 
-function Navbar({ setSearchProduct }) {
+function Navbar() {
   const user = useSelector((state) => state.auth.login?.currentUser);
-  const cartItems = useSelector((state) => state.myCart.cartItems || []);
-  const [order, setOrder] = useState([]);
-  const getListOrder = async () => {
-    try {
-      const res = await axiosInstance.get("/v1/admin/order/getList");
-      setOrder(res.data.orderList);
-    } catch (error) {
-      setOrder([]);
-    }
-  };
+
   const dispatch = useDispatch();
 
   const handleLogOut = (e) => {
     e.preventDefault();
     logOut(dispatch);
   };
-
-  useEffect(() => {
-    if (user) {
-      getCartCreateBy(dispatch);
-    }
-  }, [user, dispatch]);
-  useEffect(() => {
-    getListOrder();
-  }, []);
 
   return (
     <div className="w-[86%] h-[5rem] fixed top-0 right-0 z-50 border bg-white">
@@ -48,17 +27,7 @@ function Navbar({ setSearchProduct }) {
 
         {/* Menu phải */}
         <div className="flex items-center gap-5">
-          <Link
-            to="/order_management"
-            className="relative flex items-center justify-center bg-orange-500 hover:bg-orange-600 p-2 rounded-full text-white transition"
-          >
-            <Bell size={20} />
-
-            {/* Badge số lượng */}
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full px-1.5 py-0.5 shadow-md">
-              {order?.length}
-            </span>
-          </Link>
+          <Notification />
           {/* User */}
           {user ? (
             <div className="flex items-center gap-3">

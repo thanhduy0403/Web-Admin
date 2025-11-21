@@ -48,34 +48,26 @@ function AccountManagement() {
   console.log("getAccount", getAccount);
   return (
     <>
-      <Navbar />
-      <div className="flex w-full ">
-        <div className="w-[14%] ">
-          <Sidebar />
+      <div className="flex justify-between mt-16 mr-3 px-10 items-center">
+        <div>
+          <h1 className="text-xl font-bold"> Quản Lý Tài Khoản</h1>
+          <span className="text-gray-500 text-sm">
+            Quản lý thông tin tài khoản
+          </span>
         </div>
-        <div className="w-[86%] mx-auto  mt-16   min-h-screen border  bg-gray-50">
-          <div className="flex justify-between mt-10 mr-3 px-10 items-center">
-            <div>
-              <h1 className="text-xl font-bold"> Quản Lý Tài Khoản</h1>
-              <span className="text-gray-500 text-sm">
-                Quản lý thông tin tài khoản
-              </span>
-            </div>
-            <div
-              onClick={showModalView}
-              className=" flex items-center text-white gap-2 w-[13rem] border rounded-sm py-1 px-2 text-center bg-black"
-            >
-              <UserPlus />
-              <button>Thêm mới tài khoản</button>
-            </div>
-          </div>
-          <div
-            className=" w-[90%] mx-auto space-y-5 py-8 text-sm border mt-4 bg-white mb-3
+        <div
+          onClick={showModalView}
+          className=" flex items-center text-white gap-2 w-[13rem] border font-semibold rounded-sm py-1 px-2 text-center bg-black"
+        >
+          <UserPlus />
+          <button>Thêm mới tài khoản</button>
+        </div>
+      </div>
+      <div
+        className=" w-[90%] mx-auto space-y-5 py-8 text-sm border mt-4 bg-white mb-3
       rounded-md "
-          >
-            <AccountList getAccount={getAccount} account={account} />
-          </div>
-        </div>
+      >
+        <AccountList getAccount={getAccount} account={account} />
       </div>
 
       {/*  modal thêm tài khoản  */}

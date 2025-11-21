@@ -208,7 +208,7 @@ function OrderList({
 
                     {/* Tổng tiền */}
                     <td className="px-4 py-3 text-right text-red-500 font-semibold">
-                      {item.totalPriceProduct?.toLocaleString("de-DE") || 0}$
+                      {item.finalPrice?.toLocaleString("de-DE") || 0}đ
                     </td>
 
                     {/* Trạng thái đơn */}
